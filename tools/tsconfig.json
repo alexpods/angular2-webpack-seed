@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "sourceMap": true,
+    "experimentalDecorators": true,
+    "isolatedModules": true
+  },
+  "files": [
+    "../src/index.ts"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "name": "angular2-webpack-seed",
+  "version": "0.0.0",
+  "description": "Project seed for angular2 using Webpack as a module bundler",
+  "main": "index.js",
+  "scripts": {
+    "webpack": "webpack --config ./tools/webpack.config.js ",
+    "build": "npm run webpack --progress --colors --display-error-details",
+    "server": "webpack-dev-server --config ./tools/webpack.config.js --hot --progress --display-error-details"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alexpods/angular2-webpack-seed"
+  },
+  "keywords": [
+    "angular2",
+    "webpack",
+    "seed"
+  ],
+  "author": "alexpods <aleksey.podskrebyshev@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alexpods/angular2-webpack-seed/issues"
+  },
+  "homepage": "https://github.com/alexpods/angular2-webpack-seed",
+  "dependencies": {
+    "@reactivex/rxjs": "^5.0.0-alpha.7",
+    "angular2": "^2.0.0-alpha.45",
+    "reflect-metadata": "^0.1.2",
+    "zone.js": "^0.5.8"
+  },
+  "devDependencies": {
+    "ts-loader": "^0.6.0",
+    "typescript": "^1.6.2",
+    "webpack": "^1.12.2",
+    "webpack-dev-server": "^1.12.1"
+  }
+}
