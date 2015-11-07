@@ -5,13 +5,13 @@ var CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
 
 module.exports = {
   debug: true,
-  devtool: 'source-map',
+  target: 'web',
+  devtool: 'inline-source-map',
 
   devServer: {
     inline: true,
     colors: true,
-    contentBase: path.join(__dirname, '..', 'public'),
-    historyApiFallback: true
+    contentBase: path.join(__dirname, '..', 'public')
   },
 
   entry: {
@@ -33,6 +33,10 @@ module.exports = {
     new CommonsChunkPlugin('common.js')
   ],
 
+  resolve: {
+    extensions: ['', '.ts', '.js']
+  },
+
   module: {
     loaders: [
       {
@@ -40,7 +44,7 @@ module.exports = {
         loader: 'ts',
         query: {
           transpileOnly: true,
-          configFileName: 'tsconfig.json'
+          configFileName: path.join(__dirname, 'tsconfig.json')
         },
         exclude: [
           /node_modules/
