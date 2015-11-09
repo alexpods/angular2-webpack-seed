@@ -6,7 +6,8 @@
   "scripts": {
     "webpack": "webpack --config ./tools/webpack.config.js ",
     "build": "npm run webpack --progress --colors --display-error-details",
-    "server": "webpack-dev-server --config ./tools/webpack.config.js --hot --progress --display-error-details"
+    "dev-server": "webpack-dev-server --config ./tools/webpack.config.js --hot --progress --display-error-details",
+    "start": "npm run dev-server"
   },
   "repository": {
     "type": "git",
