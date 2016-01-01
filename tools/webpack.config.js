@@ -1,9 +1,11 @@
-var webpack = require('webpack');
-var path = require('path');
+const webpack = require('webpack');
+const path = require('path');
 
-var CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
+const CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
 
 module.exports = {
+  context: __dirname + '/..',
+
   debug: true,
   target: 'web',
   devtool: 'inline-source-map',
@@ -11,21 +13,15 @@ module.exports = {
   devServer: {
     inline: true,
     colors: true,
-    contentBase: path.join(__dirname, '..', 'public')
+    contentBase: './public'
   },
 
   entry: {
-    vendor: [
-      '@reactivex/rxjs',
-      'zone.js',
-      'reflect-metadata',
-      'angular2/core'
-    ],
     app: './src/index.ts'
   },
 
   output: {
-    path: path.join(__dirname, '..', 'public'),
+    path: './public',
     filename: '[name].js'
   },
 
@@ -44,7 +40,7 @@ module.exports = {
         loader: 'ts',
         query: {
           transpileOnly: true,
-          configFileName: path.join(__dirname, 'tsconfig.json')
+          configFileName: __dirname + '/tsconfig.json'
         },
         exclude: [
           /node_modules/

@@ -25,15 +25,17 @@
   },
   "homepage": "https://github.com/alexpods/angular2-webpack-seed",
   "dependencies": {
-    "@reactivex/rxjs": "^5.0.0-alpha.7",
-    "angular2": "^2.0.0-alpha.45",
+    "angular2": "^2.0.0-beta.0",
+    "es6-promise": "^3.0.2",
+    "es6-shim": "^0.33.13",
     "reflect-metadata": "^0.1.2",
-    "zone.js": "^0.5.8"
+    "rxjs": "^5.0.0-beta.0",
+    "zone.js": "^0.5.10"
   },
   "devDependencies": {
-    "ts-loader": "^0.6.0",
-    "typescript": "^1.6.2",
-    "webpack": "^1.12.2",
-    "webpack-dev-server": "^1.12.1"
+    "ts-loader": "^0.7.2",
+    "typescript": "^1.7.5",
+    "webpack": "^1.12.9",
+    "webpack-dev-server": "^1.14.0"
   }
 }
