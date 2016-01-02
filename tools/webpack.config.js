@@ -11,22 +11,31 @@ module.exports = {
   devtool: 'inline-source-map',
 
   devServer: {
-    inline: true,
-    colors: true,
     contentBase: './public'
   },
 
   entry: {
+    vendor: [
+      'es6-shim',
+      'es6-promise',
+      'reflect-metadata',
+      'zone.js/lib/browser/zone-microtask',
+      'zone.js/lib/browser/long-stack-trace-zone',
+      'rxjs'
+    ],
     app: './src/index.ts'
   },
 
   output: {
     path: './public',
-    filename: '[name].js'
+    filename: '[name].js',
+    chunkFilenam: '[id].chunk.js',
+    pathinfo: true
   },
 
   plugins: [
-    new CommonsChunkPlugin('common.js')
+    new CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.js', minChunks: Infinity }),
+    new CommonsChunkPlugin({ name: 'common', filename: 'common.js', minChunks: 2, chunks: ['app', 'vendor'] })
   ],
 
   resolve: {
@@ -39,7 +48,6 @@ module.exports = {
         test: /\.ts$/,
         loader: 'ts',
         query: {
-          transpileOnly: true,
           configFileName: __dirname + '/tsconfig.json'
         },
         exclude: [
