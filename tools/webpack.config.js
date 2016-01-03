@@ -21,7 +21,9 @@ module.exports = {
       'reflect-metadata',
       'zone.js/lib/browser/zone-microtask',
       'zone.js/lib/browser/long-stack-trace-zone',
-      'rxjs'
+      'rxjs',
+      'angular2/core',
+      'angular2/platform/browser'
     ],
     app: './src/index.ts'
   },
@@ -34,8 +36,7 @@ module.exports = {
   },
 
   plugins: [
-    new CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.js', minChunks: Infinity }),
-    new CommonsChunkPlugin({ name: 'common', filename: 'common.js', minChunks: 2, chunks: ['app', 'vendor'] })
+    new CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.js', minChunks: Infinity })
   ],
 
   resolve: {
